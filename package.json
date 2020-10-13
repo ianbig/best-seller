@@ -10,6 +10,12 @@
   "dependencies": {
     "next": "9.5.3",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-window": "^1.8.5",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1",
+    "eslint-plugin-react-hooks": "^4.1.2"
   }
 }

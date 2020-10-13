@@ -1,0 +1,54 @@
+.container {
+   border-right: 1px gray solid;
+   height: 400px;
+   max-width: 200px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   padding-right: 1.3em;
+}
+
+.imgContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 40%;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.headerTxt {
+    color: gray;
+    margin-top: 0;
+    font-weight: lighter;
+}
+
+.img {
+    height: 100%;
+    max-width: 80%;
+    margin: auto auto;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.onList {
+    color: gray;
+    font-size: .8em;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.paragraph {
+    text-align: justify;
+}
