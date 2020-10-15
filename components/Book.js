@@ -1,5 +1,5 @@
-import books from '../public/book.json'
 import styled from 'styled-components'
+import BuyButton from './BuyButton'
 
 const Container = styled.div`
         border-right: 1px gray solid;
@@ -7,7 +7,7 @@ const Container = styled.div`
         max-width: 200px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: space-between;
         padding-right: 1.3em;
         margin-left: 1em;
 `;
@@ -15,9 +15,8 @@ const ImgContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-        height: 40%;
-        width: 100%;
-        margin-bottom: 1em;
+    height: 40%;
+     width: 100%;
     `;
     const HeaderTexxt = styled.h1`
         color: gray;
@@ -33,7 +32,7 @@ const ImgContainer = styled.div`
     const TextContainer = styled.div`
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        margin-top: 30px;
     `;
     const Header = styled.div`
         display: flex;
@@ -41,11 +40,34 @@ const ImgContainer = styled.div`
     `;
     const Onlist = styled.div`
         color: gray;
-        font-size: .8em;
+        font-size: 11px;
+        margin: 0;
     `;
     const Title = styled.p`
-        font-weight: lighter;
+        font-weight: bold;
+        margin: 1px;
+        font-size: 16px;
+    `;
+
+    const Author = styled.div`
+        font-size: 15px;
+        
     `
+
+    const Des = styled.p`
+        margin-top: 10px;
+        font-size: 14px;
+        @media (max-width: 1000px) {
+            display:none;
+        }
+    `
+const Info = styled.div`
+    height: 90%;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    //justify-content: flex-start;
+`
 
 export default function Book({book}) {
 
@@ -58,18 +80,21 @@ export default function Book({book}) {
 
     return (
         <Container>
-            <ImgContainer>
-                <HeaderTexxt>{rank}</HeaderTexxt>
-                <Img src={img}/>
-            </ImgContainer>
-            <TextContainer>
-                <Header>
-                    <Onlist>{onList == 1? "NEW THIS WEEK":`${onList} WEEKS ON THE LIST`}</Onlist>
-                    <Title>{title}</Title>
-                    <div>by {author}</div>
-                </Header>
-                <p>{description}</p>
-            </TextContainer>
+            <Info>
+                <ImgContainer>
+                    <HeaderTexxt>{rank}</HeaderTexxt>
+                    <Img src={img}/>
+                </ImgContainer>
+                <TextContainer>
+                    <Header>
+                        <Onlist>{onList == 1? "NEW THIS WEEK":`${onList} WEEKS ON THE LIST`}</Onlist>
+                        <Title>{title}</Title>
+                        <Author>by {author}</Author>
+                    </Header>
+                    <Des>{description}</Des>
+                </TextContainer>
+           </Info>
+           <BuyButton/>
         </Container>
     )
 }

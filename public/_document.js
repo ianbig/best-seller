@@ -18,6 +18,7 @@ export default class MyDocument extends Document {
         <Head>
           <title>Best-Sellers-The New York Times</title>
           {this.props.styleTags}
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
         <body>
           <Main />

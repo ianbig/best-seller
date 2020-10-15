@@ -5,6 +5,10 @@ import Book from '../components/Book'
 const BookContainer = styled.div`
     display: flex;
     justify-content: flex-start;
+    margin-bottom: 1.5em;
+`
+const Note = styled.p`
+    text-align: center;
 `
 
 export default function BookList({item, baseUrl, apiKey}) {
@@ -14,11 +18,11 @@ export default function BookList({item, baseUrl, apiKey}) {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        console.log('hi')
+        // console.log('hi')
         fetch(url)
         .then((res) => res.json())
         .then((data) => setData(data['results']))
-        .then(() => console.log('fetching finish'))
+        // .then(() => console.log('fetching finish'))
         .catch(console.error)
     }, []);
 
@@ -37,10 +41,10 @@ export default function BookList({item, baseUrl, apiKey}) {
                         )
                     }
                     </BookContainer>
+                    <Note>When you purchase an independently ranked book through our site, we earn an affiliate commission.</Note>
                 </>
             )
         } // avoid exceed Qota
     }
-
-    return null; // return to Error page
+    return null;
 }
