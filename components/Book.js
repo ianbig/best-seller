@@ -10,43 +10,72 @@ const Container = styled.div`
         justify-content: space-between;
         padding-right: 1.3em;
         margin-left: 1em;
+        @media(max-width: 730px) {
+            border: none;
+            height: 100px;
+        }
 `;
 const ImgContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     height: 40%;
-     width: 100%;
+    width: 100%;
+    min-width: 82px;
+    @media (max-width: 730px) {
+        max-width: 18px;
+    }
     `;
     const HeaderTexxt = styled.h1`
         color: gray;
         margin-top: 0;
         font-weight: lighter;
+        @media (max-width: 730px) {
+            margin: 0px;
+        }
     `;
     const Img = styled.img`
         height: 100%;
         max-width: 80%;
         margin: auto auto;
+        min-width: 82px;
+        @media(max-width: 730px) {
+            display:none;
+            height: 0px;
+            width: 0px;
+        }
     `;
     
     const TextContainer = styled.div`
         display: flex;
         flex-direction: column;
         margin-top: 30px;
+        @media (max-width: 730px) {
+            margin: 0px;
+        }
     `;
     const Header = styled.div`
         display: flex;
         flex-direction: column;
+        width: 640px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
     `;
     const Onlist = styled.div`
         color: gray;
         font-size: 11px;
         margin: 0;
+        @media (max-width: 730px) {
+            display: none;
+        }
     `;
     const Title = styled.p`
         font-weight: bold;
         margin: 1px;
         font-size: 16px;
+        @media (max-width) {
+            margin: 0;
+        }
     `;
 
     const Author = styled.div`
@@ -67,6 +96,12 @@ const Info = styled.div`
     display: flex;
     flex-direction: column;
     //justify-content: flex-start;
+    @media(max-width: 730px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
 `
 
 export default function Book({book}) {

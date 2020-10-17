@@ -9,11 +9,20 @@ const Container = styled.div`
     border-bottom: 1px solid gray;
 `
 
-function Content({dispatch, data}) {
+function stringifyDate(date) {
+    if(date === 1) return '2020-03-01';
+    else if(date === 8) return '2020-03-08';
+    else if(date === 15) return '2020-03-15';
+    else if(date === 22) return '2020-03-22';
+    else if(date === 29) return '2020-03-29';
+}
+
+function Content({dispatch, data, date}) {
     const baseUrl = "https://api.nytimes.com/svc/books/v3/lists/"
     const apiKey = "api-key=jLRi1SY410cMHHlZQrsUJkK0dvtgtqu9"
     let category = undefined;
     // const data = null;
+    const stringDate = stringifyDate(date);
 
     useEffect(
         () => dispatch(FetchData()), 
@@ -32,7 +41,7 @@ function Content({dispatch, data}) {
                 {
 
                     category.map( (item, index) => 
-                        <Container><BookList key={`${item.list_name}-${index}`} item={item} baseUrl={baseUrl} apiKey={apiKey}/></Container>
+                        <Container><BookList key={`${item.list_name}-${index}`} item={item} baseUrl={baseUrl} apiKey={apiKey} date={stringDate}/></Container>
                         
                     )
                 }

@@ -1,4 +1,4 @@
-import {FETCH_DATA_SUCCEED} from '../public/constant'
+import {FETCH_DATA_SUCCEED, CHANGE_DATE} from '../public/constant'
 
 export function FatchDateSucceed(lists) {
     // console.log(lists);
@@ -22,4 +22,15 @@ export default function FetchData() {
         .then((res) => dispatch(FatchDateSucceed(res)))
         .catch(console.error);
     }
+}
+
+export function changeDate(date, chageType) {
+    // console.log(date);
+    // console.log(chageType)
+    return (
+        {
+            type: CHANGE_DATE,
+            payload: chageType === 'pre' ? date -7: date + 7
+        }
+    )
 }

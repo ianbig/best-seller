@@ -7,6 +7,9 @@ const Button = styled.button`
     height: 1.5rem;
     width: 4rem;
     margin: 0px;
+    @media (max-width: 730px) {
+        display: none;
+    }
 `
 
 export default function BuyButton() {

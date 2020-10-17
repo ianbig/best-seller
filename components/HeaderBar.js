@@ -19,6 +19,7 @@ const ChildBar = styled.select`
   width: 100%;
   font-size: .4em;
   text-align: start;
+  min-width: 67px;
 `
 
 const ChildBarGroup = styled.div`
