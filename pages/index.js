@@ -16,6 +16,7 @@ const Container = styled.div`
   min-width: 100%;
   min-height: 100%;
   display: flex;
+  overflow-x: hidden;
   // flex-direction: column;
 `
 /** */
