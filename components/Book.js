@@ -57,9 +57,12 @@ const ImgContainer = styled.div`
     const Header = styled.div`
         display: flex;
         flex-direction: column;
-        width: 640px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 16px;
+        @media (max-width: 730px) {
+            width: 640px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        } 
+        
     `;
     const Onlist = styled.div`
         color: gray;
