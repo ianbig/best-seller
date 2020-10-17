@@ -4,8 +4,13 @@ const Header = styled.header`
   border-bottom: 3px solid #e2e2e2;
   display: flex;
   flex-direction: column;
-  max-height: 25%;
+  max-height: 26px;
+  min-width: 100%;
   margin: 0;
+  @media (min-height: 400px) {
+    min-width: 100%;
+    min-height: 78px;
+  }
 `;
 
 const Padding = styled.div`
@@ -33,6 +38,10 @@ const MenuBar = styled.img`
   width: 16px;
   margin: 0 .5em 0;
   align-self: center;
+
+  @meida (min-height: 400px) {
+    height: 32px;
+  }
 `
 
 const Login = styled.button`

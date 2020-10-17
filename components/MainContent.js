@@ -7,6 +7,9 @@ import styled from 'styled-components'
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    @media (min-height: 400px) {
+        width: 100%;
+    }
 `
 
 const MainContent = () => {

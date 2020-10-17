@@ -4,6 +4,21 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
 import reducers from '../reducers'
 import {createStore, applyMiddleware} from 'redux'
+import {createGlobalStyle} from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+  }
+
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+  }
+`
 
 const store = createStore(
   reducers,
@@ -13,9 +28,13 @@ const store = createStore(
 export default function App({Component}) {
 
   return (
-    <Provider store={store}>
-      <Component />
-    </Provider>
+    <>
+      <GlobalStyle />
+        <Provider store={store}>
+          <Component />
+        </Provider>
+    </>
+    
   )
 };
 
