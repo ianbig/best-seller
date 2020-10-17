@@ -1,7 +1,7 @@
 import Menu from '../components/Menu'
 import MainContent from '../components/MainContent'
 import styled from 'styled-components'
-import { Head } from 'next/document'
+import  Head  from 'next/head'
 
 
 /** style-component styling for component */
@@ -24,10 +24,10 @@ const Container = styled.div`
 export default function Index() {
   return (
       <>
-      <head>
+      <Head>
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, 
      user-scalable=0" />
-      </head>
+      </Head>
         < Menu/>
         <Container>
           <Padding></Padding>
