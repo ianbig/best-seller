@@ -1,7 +1,9 @@
 import styled from 'styled-components'
-
+import DateBar from './DateBar'
 
 const Bar = styled.div `
+  display: flex;
+  justify-content: space-between;
   border-top: 1px solid gray;
   border-bottom: 2px solid black;
   margin-bottom: 2em;
@@ -60,6 +62,7 @@ export default function HeaderBar() {
             <option>Young Adult Paperback</option>
           </ChildBar>
         </ChildBarGroup>
+        <DateBar/>
       </Bar>
     )
 }

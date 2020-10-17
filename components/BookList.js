@@ -18,16 +18,13 @@ export default function BookList({item, baseUrl, apiKey}) {
     const [data, setData] = useState(null);
 
     useEffect(() => {
-        // console.log('hi')
         fetch(url)
         .then((res) => res.json())
         .then((data) => setData(data['results']))
-        // .then(() => console.log('fetching finish'))
-        .catch(console.error)
+        .catch(console.log(`Error in fetching data from individual list`))
     }, []);
 
     if(data) {
-        // console.log(data);
         const listName = data['display_name'];
         const bookList = data['books'].slice(0,5);
         if(listName && bookList) {

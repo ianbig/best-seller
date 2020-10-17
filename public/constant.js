@@ -1,0 +1,1 @@
+export const FETCH_DATA_SUCCEED = "FETCH_DATA_SUCCEED"

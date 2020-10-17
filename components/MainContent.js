@@ -3,28 +3,33 @@ import HeaderBar from '../components/HeaderBar'
 import Content from '../components/Content'
 import styled from 'styled-components'
 
+
 const Container = styled.div`
     display: flex;
     flex-direction: column;
 `
 
-export default function MainContent() {
+const MainContent = () => {
+    
     return (
-        <Container>
-            <Header/>
-            <HeaderBar />
-            <Content />
-        </Container>
+            <Container>
+                <Header/>
+                <HeaderBar />
+                <Content />
+            </Container>        
     )
 
 }
 
+export default MainContent;
 
-// why use export default: to allow naming for other users
 /** 
- * <pre>{JSON.stringify(data, null, 2)}</pre>
- * {data["results"].map( (item) => 
-                    <BookList key={item.list_name} item={item} baseUrl={baseUrl} apiKey={apiKey}/>
-                )} */
 
-// bug: too many request
+const MapStateToProps = (state) => {
+    console.log(state);
+    return state;
+}
+
+export default connect(MapStateToProps)(MainContent); // pass this.props to the component
+
+*/

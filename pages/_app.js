@@ -1,38 +1,21 @@
-import Menu from '../components/Menu'
-import MainContent from '../components/MainContent'
-import styled from 'styled-components'
 import "./_app.css";
+import {Provider} from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunkMiddleware from 'redux-thunk'
+import reducers from '../reducers'
+import {createStore, applyMiddleware} from 'redux'
 
-const Padding = styled.div`
-  width: 10%;
-  height: 100%;
-  background-color: black;
-`
+const store = createStore(
+  reducers,
+  composeWithDevTools(applyMiddleware(thunkMiddleware))
+)
 
-const Container = styled.div`
-  min-width: 100%;
-  min-height: 100%;
-  display: flex;
-  // flex-direction: column;
-`
+export default function App({Component}) {
 
-
-function MyApp() {
   return (
-    <>
-      <Menu/>
-      <Container>
-        <Padding></Padding>
-        <MainContent />
-        <Padding/>
-      </Container>
-      <footer></footer>
-    </>
+    <Provider store={store}>
+      <Component />
+    </Provider>
   )
-}
+};
 
-export default MyApp
-
-/**
- * state: url
- */

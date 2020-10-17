@@ -1,48 +1,38 @@
-import {useEffect, useState} from 'react'
 import BookList from './BookList'
 import styled from 'styled-components'
-
-export const Loader = styled.div`
-    border: 16px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(180deg); }
-}
-`
+import {connect} from 'react-redux'
+import {useEffect} from 'react'
+import FetchData from '../actions'
 
 const Container = styled.div`
     // margin-bottom: 50px;
     border-bottom: 1px solid gray;
 `
 
-export default function MainContent() {
+function Content({dispatch, data}) {
     const baseUrl = "https://api.nytimes.com/svc/books/v3/lists/"
     const apiKey = "api-key=jLRi1SY410cMHHlZQrsUJkK0dvtgtqu9"
-    const request = "names.json?";
-    const requestList = baseUrl + request + apiKey;
-    const [data, setdata] = useState(null);
     let category = undefined;
-    
-    useEffect(() => {
-       fetch(requestList)
-       .then((res) => res.json())
-       .then((data) => setdata(data))
-       .catch(console.error)
-    }, []);
+    // const data = null;
+
+    useEffect(
+        () => dispatch(FetchData()), 
+        []);
+
+    // console.log(data)
 
     if(data) {
-        category = data["results"].slice(0,4);
+        category = data["results"];
+        if(category) {
+            category = category.slice(0,3);
+        }
+        else return <h1>Loading</h1>
         return (
             <>
                 {
 
-                    category.map( (item) => 
-                        <Container><BookList key={item.list_name} item={item} baseUrl={baseUrl} apiKey={apiKey}/></Container>
+                    category.map( (item, index) => 
+                        <Container><BookList key={`${item.list_name}-${index}`} item={item} baseUrl={baseUrl} apiKey={apiKey}/></Container>
                         
                     )
                 }
@@ -53,3 +43,10 @@ export default function MainContent() {
     return <h1>Loading</h1>
 
 }
+
+const MapStateToProps = (state) => {
+    // console.log(state);
+    return state;
+}
+
+export default connect(MapStateToProps)(Content); // pass this.props to the component
