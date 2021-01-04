@@ -2,9 +2,9 @@ This is a project trying to re-create [The New York Times Best Sellers](https://
 
 ## Project Requirement
 - re-create front-end page with specific javascript framework
- - [React](https://zh-hant.reactjs.org/)
- - [React-Redux](https://react-redux.js.org/)
- - [Nextjs](https://nextjs.org/)
+  - [React](https://zh-hant.reactjs.org/)
+  - [React-Redux](https://react-redux.js.org/)
+  - [Nextjs](https://nextjs.org/)
 
 ## Getting Started
 
