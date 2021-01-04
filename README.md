@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a project trying to re-create [The New York Times Best Sellers](https://www.nytimes.com/books/best-sellers/) page
+
+## Project Requirement
+- re-create front-end page with specific javascript framework
+ - [React](https://zh-hant.reactjs.org/)
+ - [React-Redux](https://react-redux.js.org/)
+ - [Nextjs](https://nextjs.org/)
 
 ## Getting Started
 
